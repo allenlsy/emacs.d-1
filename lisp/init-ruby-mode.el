@@ -25,7 +25,7 @@
 ;; TODO: hippie-expand ignoring : for names in ruby-mode
 ;; TODO: hippie-expand adaptor for auto-complete sources
 
-
+
 ;;; Inferior ruby
 (require-package 'inf-ruby)
 (require-package 'ac-inf-ruby)
@@ -36,7 +36,7 @@
   (define-key inf-ruby-mode-map (kbd "TAB") 'auto-complete))
 
 
-
+
 ;;; Ruby compilation
 (require-package 'ruby-compilation)
 
@@ -47,7 +47,7 @@
     (define-key m [f6] 'recompile)))
 
 
-
+
 ;;; Robe
 (require-package 'robe)
 (after-load 'ruby-mode
@@ -59,19 +59,19 @@
               (set-auto-complete-as-completion-at-point-function))))
 
 
-
+
 ;;; ri support
 (require-package 'yari)
 (defalias 'ri 'yari)
 
 
-
+
 ;;; YAML
 
 (require-package 'yaml-mode)
 
 
-
+
 ;;; ERB
 (require-package 'mmm-mode)
 (defun sanityinc/ensure-mmm-erb-loaded ()

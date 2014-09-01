@@ -2,6 +2,8 @@
 (when (> emacs-major-version 23)
   (require-package 'hayoo))
 
+(add-to-list 'completion-ignored-extensions ".hi")
+
 ;;; Flycheck specifics
 (when (> emacs-major-version 23)
   (require-package 'flycheck-hdevtools)
@@ -69,7 +71,7 @@ been saved."
      'compilation-error-regexp-alist alias)))
 
 
-
+
 ;; Hook auto-complete into the completions provided by the inferior
 ;; haskell process, if any.
 

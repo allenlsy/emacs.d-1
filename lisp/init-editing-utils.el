@@ -23,7 +23,7 @@
  indent-tabs-mode nil
  make-backup-files nil
  mouse-yank-at-point t
- save-interprogram-paste-before-kill t
+ save-interprogram-paste-before-kill nil
  scroll-preserve-screen-position 'always
  set-mark-command-repeat-pop t
  show-trailing-whitespace t
@@ -41,7 +41,7 @@
 
 (transient-mark-mode t)
 
-
+
 ;;; Whitespace
 
 (defun sanityinc/no-trailing-whitespace ()
@@ -62,7 +62,7 @@
 (require-package 'whitespace-cleanup-mode)
 (global-whitespace-cleanup-mode t)
 
-
+
 ;;; Newline behaviour
 
 (global-set-key (kbd "RET") 'newline-and-indent)
@@ -74,24 +74,24 @@
 
 (global-set-key (kbd "S-<return>") 'sanityinc/newline-at-end-of-line)
 
-
+
 
 (when (eval-when-compile (string< "24.3.1" emacs-version))
   ;; https://github.com/purcell/emacs.d/issues/138
   (after-load 'subword
     (diminish 'subword-mode)))
 
-
+
 
 (when (fboundp 'global-prettify-symbols-mode)
   (global-prettify-symbols-mode))
 
-
+
 (require-package 'undo-tree)
 (global-undo-tree-mode)
 (diminish 'undo-tree-mode)
 
-
+
 (require-package 'highlight-symbol)
 (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
   (add-hook hook 'highlight-symbol-mode)
@@ -106,7 +106,7 @@
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
 
 
-
+
 (require-package 'browse-kill-ring)
 
 
@@ -305,7 +305,7 @@ forward N lines; otherwise backward."
 (suspend-mode-during-cua-rect-selection 'whole-line-or-region-mode)
 
 
-
+
 
 (defun sanityinc/open-line-with-reindent (n)
   "A version of `open-line' which reindents the start and end positions.
@@ -353,7 +353,7 @@ With arg N, insert N newlines."
                    (lambda (s1 s2) (eq (random 2) 0)))))))
 
 
-
+
 
 (when (executable-find "ag")
   (require-package 'ag)
@@ -362,11 +362,11 @@ With arg N, insert N newlines."
   (global-set-key (kbd "M-?") 'ag-project))
 
 
-
+
 (require-package 'highlight-escape-sequences)
 (hes-mode)
 
-
+
 (require-package 'guide-key)
 (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x 5" "C-c ;" "C-c ; f" "C-c ' f" "C-x n"))
 (guide-key-mode 1)

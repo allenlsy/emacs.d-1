@@ -8,7 +8,7 @@
 (require-package 'ac-slime)
 (require-package 'hippie-expand-slime)
 
-
+
 ;;; Lisp buffers
 
 (defun sanityinc/slime-setup ()
@@ -24,7 +24,7 @@
   (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
   (add-hook 'slime-mode-hook 'sanityinc/slime-setup))
 
-
+
 ;;; REPL
 
 (defun sanityinc/slime-repl-setup ()

@@ -27,7 +27,7 @@
 (require 'init-preload-local nil t)
 
 ;;----------------------------------------------------------------------------
-;; Load configs for specific features and modes
+;; Load configs for specific features and modes≈≈≈≈≈≈≈≈≈≈
 ;;----------------------------------------------------------------------------
 
 (require-package 'wgrep)
@@ -39,7 +39,8 @@
 (require 'init-frame-hooks)
 (require 'init-xterm)
 (require 'init-themes)
-(require 'init-osx-keys)
+(require 'init-powerline)
+; (require 'init-osx-keys)
 (require 'init-gui-frames)
 (require 'init-proxies)
 (require 'init-dired)
@@ -47,6 +48,7 @@
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-flycheck)
+(require 'init-fiplr)
 
 (require 'init-recentf)
 (require 'init-ido)
@@ -81,6 +83,9 @@
 (require 'init-ruby-mode)
 (require 'init-rails)
 (require 'init-sql)
+(require 'init-web-mode)
+(require 'init-emmet-mode)
+
 
 (require 'init-paredit)
 (require 'init-lisp)

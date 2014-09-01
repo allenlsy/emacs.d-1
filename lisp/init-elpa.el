@@ -11,7 +11,7 @@
 (require 'package)
 
 
-
+
 ;;; Standard package repositories
 
 ;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -28,7 +28,7 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
 
-
+
 ;; If gpg cannot be found, signature checking will fail, so we
 ;; conditionally enable it according to whether gpg is available. We
 ;; re-run this check once $PATH has been configured
@@ -40,7 +40,7 @@
   (sanityinc/package-maybe-enable-signatures))
 
 
-
+
 ;;; On-demand installation of packages
 
 (defun require-package (package &optional min-version no-refresh)
@@ -56,14 +56,14 @@ re-downloaded in order to locate PACKAGE."
         (require-package package min-version t)))))
 
 
-
+
 ;;; Fire up package.el
 
 (setq package-enable-at-startup nil)
 (package-initialize)
 
 
-
+
 (require-package 'fullframe)
 (fullframe list-packages quit-window)
 
