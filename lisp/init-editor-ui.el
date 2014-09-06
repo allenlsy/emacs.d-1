@@ -55,4 +55,6 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
  '("Hiragino Sans GB" "Microsoft Yahei" "文泉驿等宽微米黑" "黑体" "新宋体" "宋体"))
 
 
+(require 'indent-guide)
+
 (provide 'init-editor-ui)

@@ -5,7 +5,9 @@
 (add-auto-mode 'ruby-mode
                "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
                "\\.rjs\\'" "\\.irbrc\\'" "\\.pryrc\\'" "\\.builder\\'" "\\.ru\\'"
-               "\\.gemspec\\'" "Gemfile\\'" "Kirkfile\\'")
+               "\\.gemspec\\'" "Gemfile\\'" "Kirkfile\\'"
+               "Guardfile\\'"
+               )
 
 (setq ruby-use-encoding-map nil)
 
@@ -101,6 +103,15 @@
 (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))
 
+;; FLYMAKE
+
+(require 'flymake-ruby)
+(add-hook 'ruby-mode-hook 'flymake-ruby-load)
+
+;; COMPANY MODE
+
+(global-company-mode t)
+(push 'company-robe company-backends)
 
 ;;----------------------------------------------------------------------------
 ;; Ruby - my convention for heredocs containing SQL
@@ -122,7 +133,6 @@
 ;;      (mmm-add-mode-ext-class 'ruby-mode "\\.rb\\'" 'ruby-heredoc-sql)))
 
 ;(add-to-list 'mmm-set-file-name-for-modes 'ruby-mode)
-
 
 
 (provide 'init-ruby-mode)

@@ -36,13 +36,15 @@
 (require-package 'scratch)
 (require-package 'mwe-log-commands)
 
+
+;;; MINOR MODES
 (require 'init-frame-hooks)
 (require 'init-xterm)
 (require 'init-themes)
-(require 'init-powerline)
 (require 'init-osx-keys)
 ;; (require 'init-nerd-commenter)
 (require 'init-gui-frames)
+(require 'init-powerline)
 (require 'init-editor-ui)
 (require 'init-proxies)
 (require 'init-dired)
@@ -60,6 +62,9 @@
 (require 'init-sessions)
 (require 'init-fonts)
 (require 'init-mmm)
+(require 'init-yasnippet)
+; (require 'init-ggtags)
+(require 'init-ace-jump)
 
 (require 'init-editing-utils)
 
@@ -148,7 +153,6 @@
           (lambda ()
             (message "init completed in %.2fms"
                      (sanityinc/time-subtract-millis after-init-time before-init-time))))
-
 
 (provide 'init)
 
